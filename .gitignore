@@ -161,6 +161,8 @@ cython_debug/
 
 *.csv
 *.bat
+.DS_Store
+data/
 driver/
 Brasileirão/
 Bundesliga/
