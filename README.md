@@ -17,6 +17,14 @@ python3 -m playwright install chromium
 python3 botola_pro.py
 ```
 
+Pour voir le resultat dans une page web simple:
+
+```bash
+python3 -m http.server
+```
+
+Puis ouvre [http://localhost:8000](http://localhost:8000). La page [index.html](/Users/kotbrabhi/Desktop/Projets/draft/index.html) charge `data/botola-pro.json` par defaut, ou permet d'importer un autre export JSON.
+
 Le script ecrit par defaut un fichier JSON dans `data/botola-pro.json` contenant:
 
 - les metadonnees du tournoi

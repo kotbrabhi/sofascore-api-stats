@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Botola Pro Viewer</title>
+    <link rel="stylesheet" href="viewer.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">SofaScore Botola Pro</p>
+          <h1>Visualiser les resultats de requete</h1>
+          <p class="hero-copy">
+            Classement, matchs, incidents, statistiques d'equipe et statistiques
+            joueurs a partir du JSON exporte par <code>botola_pro.py</code>.
+          </p>
+        </div>
+
+        <div class="hero-actions">
+          <button id="load-default" class="primary-button" type="button">
+            Charger le JSON du projet
+          </button>
+          <label class="file-input">
+            <span>Ouvrir un JSON local</span>
+            <input id="file-picker" type="file" accept="application/json,.json" />
+          </label>
+        </div>
+      </header>
+
+      <section class="toolbar">
+        <label class="search-box">
+          <span>Rechercher une equipe ou un match</span>
+          <input id="match-search" type="search" placeholder="Raja, Wydad, Tanger..." />
+        </label>
+        <p id="status-message" class="status-message">
+          Charge <code>data/botola-pro.json</code> ou importe un export JSON.
+        </p>
+      </section>
+
+      <section id="summary-grid" class="summary-grid"></section>
+
+      <main class="dashboard">
+        <section class="panel panel-large">
+          <div class="panel-header">
+            <h2>Classement</h2>
+          </div>
+          <div class="table-wrap">
+            <table class="standings-table">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Equipe</th>
+                  <th>Pts</th>
+                  <th>J</th>
+                  <th>V</th>
+                  <th>N</th>
+                  <th>D</th>
+                  <th>BP</th>
+                  <th>BC</th>
+                  <th>Diff</th>
+                </tr>
+              </thead>
+              <tbody id="standings-body"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-header">
+            <h2>Matchs</h2>
+            <span id="matches-count" class="panel-meta"></span>
+          </div>
+          <div id="matches-list" class="matches-list"></div>
+        </section>
+
+        <section class="panel panel-full">
+          <div class="panel-header">
+            <h2>Detail du match</h2>
+            <span id="selected-match-meta" class="panel-meta"></span>
+          </div>
+          <div id="match-detail" class="match-detail empty-state">
+            Selectionne un match pour voir les stats.
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="viewer.js"></script>
+  </body>
+</html>
